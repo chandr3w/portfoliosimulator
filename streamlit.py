@@ -36,7 +36,7 @@ management_fee_years = st.sidebar.slider('Years Management Fee is Charged', 1, 1
 deployment_years = st.sidebar.slider('Number of Deployment Years', 1, 10, 5, step=1)
 
 # Robust Portfolio Allocation
-st.sidebar.header('Portfolio Allocation (%) per Stage')
+st.sidebar.header('Simulations')
 valid_stages = stages[stage_index:]
 stage_allocations = {}
 allocation_values = []
