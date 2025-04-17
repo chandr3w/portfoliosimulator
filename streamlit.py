@@ -25,7 +25,7 @@ st.title('VC Portfolio Simulator')
 # Sidebar inputs
 stages = ['Pre-Seed', 'Seed', 'Series A', 'Series B']
 st.sidebar.header('Fund Parameters')
-fund_size = st.sidebar.slider('Fund Size ($MM)', 5, 500, 100, step=5)
+fund_size = st.sidebar.slider('Fund Size ($MM)', 1, 500, 100, step=1)
 initial_stage = st.sidebar.selectbox('Initial Investment Stage', stages)
 stage_index = stages.index(initial_stage)
 
