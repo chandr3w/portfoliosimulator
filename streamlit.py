@@ -164,6 +164,8 @@ for stage in valid_stages + ['Series C', 'IPO']:
     else:
         continue
         
+total_mgmt_fee   = fund_size * (management_fee_pct / 100) * management_fee_years
+deployable_capital = fund_size - total_mgmt_fee
 
 
 # Simulation function
@@ -171,7 +173,7 @@ def simulate_portfolio():
     investments = []
 
     for stage in valid_stages:
-        allocation_amount = (stage_allocations[stage] / 100) * fund_size
+        allocation_amount = (stage_allocations[stage] / 100) * deployable_capital
         deployed_in_stage = 0
 
         while deployed_in_stage < allocation_amount:
