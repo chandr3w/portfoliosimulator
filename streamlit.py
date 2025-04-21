@@ -185,14 +185,15 @@ def simulate_portfolio():
             current_stage = stage
 
             stages_sequence = stages[stages.index(stage):] + ['Series C', 'IPO']
-            for i, next_stage in enumerate(stages_sequence[1:], start=stages.index(stage)):
-                key = stages_sequence[i-1] + ' to ' + next_stage
+            for prev_stage, next_stage in zip(stages_sequence, stages_sequence[1:]):
+                key = f"{prev_stage} to {next_stage}"
                 if np.random.rand() * 100 <= prob_advancement.get(key, 0):
                     dilution_pct = np.random.uniform(*dilution.get(key, (0,0))) / 100
                     equity *= (1 - dilution_pct)
                     current_stage = next_stage
                 else:
                     break
+
 
             if np.random.rand() * 100 <= zero_probabilities.get(current_stage, 0):
                 exit_amount = 0
