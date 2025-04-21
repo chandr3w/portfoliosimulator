@@ -93,7 +93,7 @@ valuations, check_sizes = {}, {}
 # stages = ['Pre-Seed', 'Seed', 'Series A', 'Series B']
 
 valuations['Pre-Seed'] = st.sidebar.slider(f'Entry Valuation Range Pre-Seed', 2, 40, (3, 6), step=1)
-check_sizes['Pre-Seed'] = st.sidebar.slider(f'Check Size Range Pre-Seed', 0.25, 3.0, (1.0, 1.5), step=0.25)
+check_sizes['Pre-Seed'] = st.sidebar.slider(f'Check Size Range Pre-Seed', 0.1, 3.0, (1.0, 1.5), step=0.1)
 
 valuations['Seed'] = st.sidebar.slider(f'Entry Valuation Range Seed', 4, 50, (8, 15), step=1)
 check_sizes['Seed'] = st.sidebar.slider(f'Check Size Range Seed', 0.25, 10.0, (2.0, 5.0), step=0.5)
